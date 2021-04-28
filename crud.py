@@ -4,9 +4,9 @@
 
 # import some python libraries
 import os
-from flask import Flask
-from flask import flash, render_template, request, redirect, session
+from flask import Flask, jsonify, flash, render_template, request, redirect, session
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.ext.serializer import loads, dumps
 
 
 # create the Flask app object
