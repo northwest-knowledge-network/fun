@@ -1,0 +1,34 @@
+<HTML>
+ <CENTER>
+ <H1> Luke's CRUD App </H1>
+
+   {% if authed == True -%}
+        <b>USER AUTHENTICATED</b><br>
+
+        <form method="POST" action="./logout">
+         <input type="submit" value="Logout">
+	</form>
+
+   {%- else -%}
+        <b>USER NOT AUTHENTICATED</b><br>
+
+        <form method="POST" action="./login">
+         <input type="text" value="" name="username">
+         <input type="text" value="" name="password">
+         <input type="submit" value="Login">
+	</form>
+
+   {%- endif %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      {{ message }}
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+
+ </CENTER>
+ <HR>
+</HTML>
